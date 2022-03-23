@@ -8,7 +8,7 @@ export BODAM_AWS_SESSION_FILE="${HOME}/.config/aws/session-${AWS_PROFILE}"
 export AWS_SDK_LOAD_CONFIG=1
 
 dotenv ../.env
-PATH_add ../../common/scripts/
+PATH_add ../../common/bodam/scripts/
 
 if [[ "$BODAM_AUTH_MFA_ENABLED" = true ]]; then
   watch_file $BODAM_AWS_SESSION_FILE
