@@ -16,4 +16,4 @@ git-update-submodules:
 	@echo -e "\n# updating submodules\n"
 	git submodule update --init --recursive
 
-all: install-asdf-tools git-update-submodules
+all: git-update-submodules install-asdf-tools
