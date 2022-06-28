@@ -78,24 +78,13 @@ BODAM_AWS_MFA_ARN="arn:aws:iam::<main account id>:mfa/<your IAM user name>"
 
 ## Directory structure
 
-- `common` - files shared and reused by different projects
-- `commond/scripts` - shell scrtips
-- `common/terraform/bodam` - local bodam module repo
-  - use for local iterations and refer to these with a git url from terragrunt files
-  - [Terragrunt complicates matters a bit](https://terragrunt.gruntwork.io/docs/reference/config-blocks-and-attributes/#a-note-about-using-modules-from-the-registry)
-- `environments/.env` - individual file for common variables (under gitignore)
-- `environments/project_vars.hcl` - common terragrunt variables, all layers include this
-- `environments/_env_common` - files shared by each env
-- `environments/_env_common/terraform/project` - project specific terraform root modules to be used in `terragrunt.hcl`
-- `environments/_env_common/terraform/bodam` - links to or contains the bodam module repo
-  - this hack is necessary as `terragrunt` supports only one module source
-- `environments/_env_common/terragrunt` - files to be linked as `terragrunt.hcl`
+- [`common`](https://github.com/bodam-cld/infrastructure-common/tree/main) - files shared and reused by different projects
+- `environments/.env` - file for global individual variables, under gitignore (for instance BODAM_AWS_MFA_ARN)
+- `environments/project.hcl` - common terragrunt variables, all layers include this
+- `environments/_terraform` - project specific terraform root modules to be used in `terragrunt.hcl`
+- `environments/_terragrunt` - files to be linked as `terragrunt.hcl`
 - `environments/<environment>` - each env has its own subfolder
 - `environments/<environment>/.envrc` - entry point for `Direnv`
+- `environments/<environment>/env.hcl` - environment specific terragrunt variables
 - `environments/<environment>/terraform` - Terragrunt(Terraform) configuration
 - `environments/<environment>/terraform/core` - what is needed to provision the core infrastructure
-- `environments/<environment>/terraform/app` - what is needed to be able to deploy various application services
-
-## Outputs
-  * app/serverless-common:
-    * serverless_deployer_aws_iam_user_keys: user credentials to be used for CI/CD
