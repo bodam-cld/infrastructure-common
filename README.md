@@ -1,0 +1,2 @@
+- `direnv/direnv_common.sh` -- entry point for direnv managed environment dirs
+- scripts/*_session.sh -- enables MFA with AWS tokens
