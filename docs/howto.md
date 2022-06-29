@@ -29,7 +29,11 @@ make git-update-submodules
 * hook `direnv` into your shell: https://direnv.net/docs/hook.html
 * when you `cd` to a directory with an `.envrc` file (`environments/<environment>`) in it you are asked to allow loading those variables
   * issue `direnv allow` to do so
-  
+
+### aws-cli
+
+Not a hard requirement but it is useful to [have it](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) around.
+
 ### AWS accounts and access
 
 #### As individual admin user
