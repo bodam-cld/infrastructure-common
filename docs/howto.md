@@ -15,7 +15,6 @@ or if already cloned run the following in the project root:
 make git-update-submodules
 ```
 
-
 ### asdf
 
 * It is a CLI tool that can manage multiple language runtime versions on a per-project basis
